@@ -131,7 +131,7 @@ class ExerciseActivity : AppCompatActivity() {
                 currentExercisePosition++
 //                setupExerciseView()
                     if (currentExercisePosition < exerciseList?.size!! -1){
-                        textviewGetready?.text = "Congratulations. \nGet Ready for ${exerciseList!![currentExercisePosition].getName()}"
+                        textviewGetready?.text = "Nice Workout. \nGet Ready for ${exerciseList!![currentExercisePosition].getName()}"
                         setupRestView()
                     } else{
                         Toast.makeText(
