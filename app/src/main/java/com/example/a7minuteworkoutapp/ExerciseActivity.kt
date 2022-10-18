@@ -58,7 +58,6 @@ class ExerciseActivity : AppCompatActivity() {
             // currentExercisePosition++
             setRestProgressBar()
         }
-
     }
 
     private fun setRestProgressBar() {
@@ -72,11 +71,11 @@ class ExerciseActivity : AppCompatActivity() {
                 }
 
                 override fun onFinish() {
-//                    Toast.makeText(
-//                        this.baseContext,
-//                        "Start Exercise!",
-//                        Toast.LENGTH_SHORT
-//                    ).show()
+                    Toast.makeText(
+                        this.baseContext,
+                        "Start Exercise!",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     setupExerciseView()
                 }
             }.start()
@@ -105,7 +104,6 @@ class ExerciseActivity : AppCompatActivity() {
                 tvExerciseName?.text = it[currentExercisePosition].getName()
             }*/
             /////
-
 
             // Force Unwrapping of a null value !!
             ivImage?.setImageResource(exerciseList!![currentExercisePosition].getImage())
