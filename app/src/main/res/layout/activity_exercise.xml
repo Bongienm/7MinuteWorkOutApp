@@ -15,23 +15,10 @@
         android:background="@color/white"
         app:titleTextColor="@color/black" />
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get Ready"
-        android:textColor="@color/Dark_green"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/flProgressBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <FrameLayout
-        android:id="@+id/flProgressBar"
+        android:id="@+id/flRestView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="10dp"
         android:background="@drawable/item_circular_color_accent_border"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -68,8 +55,47 @@
 
         </LinearLayout>
 
+    </FrameLayout>
 
-        </FrameLayout>
+    <TextView
+        android:id="@+id/textview_getready"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Ready"
+        android:textColor="@color/Dark_green"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/flRestView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="100dp"
+        android:src="@drawable/ic_jumping_jacks"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_exercise"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvExerciseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exercise Name"
+        android:textColor="@color/light_green"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivImage"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <FrameLayout
         android:id="@+id/flExercise_View"
@@ -80,9 +106,8 @@
         tools:visibility="visible"
         android:background="@drawable/item_circular_color_accent_border"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="@id/ivImage">
 
         <ProgressBar
             android:id="@+id/progressBarExercise"
