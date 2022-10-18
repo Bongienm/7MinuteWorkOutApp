@@ -71,11 +71,11 @@ class ExerciseActivity : AppCompatActivity() {
                 }
 
                 override fun onFinish() {
-                    Toast.makeText(
-                        this.baseContext,
-                        "Start Exercise!",
-                        Toast.LENGTH_SHORT
-                    ).show()
+//                    Toast.makeText(
+//                        this.baseContext,
+//                        "Start Exercise!",
+//                        Toast.LENGTH_SHORT
+//                    ).show()
                     setupExerciseView()
                 }
             }.start()
