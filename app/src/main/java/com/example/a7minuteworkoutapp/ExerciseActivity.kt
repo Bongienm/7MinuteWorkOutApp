@@ -58,7 +58,6 @@ class ExerciseActivity : AppCompatActivity() {
             // currentExercisePosition++
             setRestProgressBar()
         }
-
     }
 
     private fun setRestProgressBar() {
@@ -106,7 +105,6 @@ class ExerciseActivity : AppCompatActivity() {
             }*/
             /////
 
-
             // Force Unwrapping of a null value !!
             ivImage?.setImageResource(exerciseList!![currentExercisePosition].getImage())
             tvExerciseName?.text = exerciseList!![currentExercisePosition].getName()
@@ -131,7 +129,7 @@ class ExerciseActivity : AppCompatActivity() {
                 currentExercisePosition++
 //                setupExerciseView()
                     if (currentExercisePosition < exerciseList?.size!! -1){
-                        textviewGetready?.text = "Congratulations. \nGet Ready for ${exerciseList!![currentExercisePosition].getName()}"
+                        textviewGetready?.text = "Nice Workout. \nGet Ready for ${exerciseList!![currentExercisePosition].getName()}"
                         setupRestView()
                     } else{
                         Toast.makeText(
