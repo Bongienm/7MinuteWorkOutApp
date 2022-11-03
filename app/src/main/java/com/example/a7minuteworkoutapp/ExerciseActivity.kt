@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.a7minuteworkoutapp.databinding.ActivityExerciseBinding
 
 class ExerciseActivity : AppCompatActivity() {
@@ -18,6 +19,7 @@ class ExerciseActivity : AppCompatActivity() {
     private var exerciseProgress = 0
     private var exerciseList : ArrayList<ExerciseModel>? = null
     private var currentExercisePosition = 0
+    private var exerciseAdapter : ExerciseStatusAdapter? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +39,15 @@ class ExerciseActivity : AppCompatActivity() {
             onBackPressed()
         }
         setupRestView()
+        setupExerciseStatusRecyclerView()
+    }
+
+    private fun setupExerciseStatusRecyclerView(){
+        binding?.recyclerViewExerciseStatus?.layoutManager =
+            LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+            exerciseAdapter = ExerciseStatusAdapter(exerciseList!!)
+            binding?.recyclerViewExerciseStatus?.adapter = exerciseAdapter
+
     }
 
     private fun setupRestView() {
