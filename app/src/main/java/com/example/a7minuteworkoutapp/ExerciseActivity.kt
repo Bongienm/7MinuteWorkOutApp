@@ -22,6 +22,9 @@ class ExerciseActivity : AppCompatActivity() {
     private var exerciseAdapter : ExerciseStatusAdapter? = null
 
 
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityExerciseBinding.inflate(layoutInflater)
@@ -139,7 +142,17 @@ class ExerciseActivity : AppCompatActivity() {
                 }
 
                 override fun onFinish() {
+                    exerciseList!![currentExercisePosition].setIsSelected(false)
+                    exerciseList!![currentExercisePosition].setIsSelected(true)
+
+
+                    exerciseAdapter!!.notifyDataSetChanged()
                 currentExercisePosition++
+
+                    exerciseList!![currentExercisePosition].setIsSelected(true)
+                    exerciseAdapter!!.notifyDataSetChanged()
+
+
 //                setupExerciseView()
                     if (currentExercisePosition < exerciseList?.size!! -1){
                         textviewGetready?.text = "Congratulations. \nGet Ready for ${exerciseList!![currentExercisePosition].getName()}"
